@@ -102,6 +102,7 @@ class Queue
         $channel->queue_declare($queue, false, true, false, false);
         $channel->exchange_declare($exchange, $type, false, true, false);
         $channel->queue_bind($queue, $exchange);
+        $channel->basic_qos(0,$this->config['rabbitmq']['qos'],false);
 
         $channel->basic_consume($queue, '', false, false, false, false,  function($message) use($callback){
             $result = call_user_func($callback,$message->body);
