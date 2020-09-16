@@ -1,0 +1,29 @@
+{
+    "name": "jiajiale/laravel-queue",
+    "description": "laravel-queue",
+    "require": {
+        "php-amqplib/php-amqplib": "^2.12"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "'xiaj'",
+            "email": "xiaj@lierda.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jiajiale\\LaravelQueue\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jiajiale\\LaravelQueue\\QueueServiceProvider"
+            ],
+            "aliases": {
+                "LaravelQueue": "Jiajiale\\LaravelQueue\\Facades\\Queue"
+            }
+        }
+    }
+}
